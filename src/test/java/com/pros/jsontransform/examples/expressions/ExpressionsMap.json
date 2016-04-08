@@ -1,0 +1,66 @@
+{
+    "$comment":"An $expression is an array of $functions applied sequentially to the $value.",
+
+    "$comment":"Generate UUID. A $expression can generate a value.",
+
+    "id":{"$expression":[{"$random_uuid":{}}]},
+
+    "$comment":"Create fullName by appending a blank and lastName to $value.",
+
+    "fullName":
+    {
+        "$value":"person|firstName",
+        "$expression":
+        [
+            {"$append":{"$what":" "}},
+            {"$append":{"$what":{"$value":"person|lastName"}}}
+        ]
+    },
+
+    "$comment":
+    [
+        "Loop through children, map each simple value to an object. ",
+        "The $expression sets the value of number to the element index. ",
+        "The $value with a . takes the value from source array as is."
+    ],
+
+    "children":
+    {
+        "$path":"person|children",
+        "$structure":
+        [
+            {
+                "number":{"$expression":[{"$set":{"$with":"$i"}}]},
+                "name":{"$value":"."}
+            }
+        ]
+    },
+
+    "$comment":["Loop through children and change their names."],
+
+    "newChildren":
+    {
+        "$path":"person|children",
+        "$structure":
+        [
+            {
+                "$value":".",
+                "$expression":
+                [
+                    {"$replace":{"$what":"Chr", "$with":"Lou"}},
+                    {"$replace":{"$what":"Hel", "$with":"Cathle"}}
+                ]
+            }
+        ]
+    },
+
+    "$comment":["Count all means of transportation in the family."],
+
+    "transportCount":
+    {
+        "$expression":
+        [
+            {"$sum":{"$what":[{"$value":"person|carCount"}, {"$value":"person|boatCount"}]}}
+        ]
+    }
+}

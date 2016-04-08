@@ -1,0 +1,14 @@
+{
+    "person":
+    {
+        "firstName":"Peter",
+        "lastName":"Smith",
+        "age":33,
+        "children":
+        [
+            "Chris", "Helen"
+        ],
+        "carCount": 2,
+        "boatCount": 0
+    }
+}

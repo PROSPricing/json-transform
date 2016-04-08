@@ -1,0 +1,38 @@
+{
+    "$comment":
+    [
+        "Create one target array from two source arrays. ",
+        "By setting $path to a source array the transformation loops ",
+        "through each source element and creates a target element ",
+        "using the transform array first element as a model. ",
+        "The $value resolves references to firstNames and lastNames.",
+        "The $i refers to first name element and identifies the corresponding last name.",
+        "The $constraints enforces that a last name exists for each first name."
+    ],
+
+    "$path":"firstNames",
+    "people":
+    [
+        {
+            "fullName":
+            {
+                "$value":".",
+                "$expression":
+                [
+                    {"$append":{"$what":" "}},
+                    {
+                        "$append":
+                        {
+                            "$what":
+                            {
+                                "$value":"..|..|lastNames|$i",
+                                "$constraints":[{"$required":true}, {"$type":"string"}]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+

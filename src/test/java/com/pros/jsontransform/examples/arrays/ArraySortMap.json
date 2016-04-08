@@ -1,0 +1,73 @@
+{
+    "$comment":"Sort array of simple string values.",
+
+    "sorted-colors-asc":
+    {
+        "$path":"colors",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$ascending":{"$by":{"$value":"."}}}
+    },
+
+    "$comment":"Sort array of simple string values in descending order.",
+
+    "sorted-colors-desc":
+    {
+        "$path":"colors",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$descending":{"$by":{"$value":"."}}}
+    },
+
+    "$comment":"Sort array of simple numeric values in ascending order.",
+
+    "sorted-numbers":
+    {
+        "$path":"numbers",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$ascending":{"$by":{"$value":"."}}}
+    },
+
+    "$comment":"Sort array of objects by string field.",
+
+    "sorted-shapes-by-name":
+    {
+        "$path":"shapes",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$ascending":{"$by":{"$value":"name"}}}
+    },
+
+    "$comment":"Sort array of objects by numeric field.",
+
+    "sorted-shapes-by-index":
+    {
+        "$path":"shapes",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$descending":{"$by":{"$value":"index"}}}
+    },
+
+    "$comment":"Sort array of objects using an expression.",
+
+    "sorted-folks":
+    {
+        "$path":"folks",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$sort":{"$ascending":{"$by":{"$value":"name", "$expression":[{"$append":{"$what":{"$value":"surname"}}}]}}}
+    }
+}

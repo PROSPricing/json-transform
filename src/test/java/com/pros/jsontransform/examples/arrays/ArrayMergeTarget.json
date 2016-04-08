@@ -1,0 +1,9 @@
+{
+  "people" : [ {
+    "fullName" : "Paul Jones"
+  }, {
+    "fullName" : "Hanna Montana"
+  }, {
+    "fullName" : "Peter Russell"
+  } ]
+}

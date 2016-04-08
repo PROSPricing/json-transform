@@ -1,0 +1,6 @@
+json-transform
+A light-weight Java library that supports JSON transformation (mapping).
+Copyright (c) 2016 PROS, Inc.
+
+This product uses Jackson developed by FasterXML.
+https://github.com/FasterXML/jackson

@@ -1,0 +1,37 @@
+{
+    "$comment":
+    [
+        "Create cars array from the items array.",
+        "The $path sets the transform context deep into the source structure.",
+        "The $structure element defines the structure of the cars array elements.",
+        "The $value directives assemble the new car structure from the source items.",
+        "The total and tax fields access array data that is further nested in each item."
+    ],
+
+    "cars":
+    {
+        "$path":"items|0|items|0|items",
+        "$structure":
+        [
+            {
+                "name":
+                {
+                    "$value":"brand",
+                    "$expression":
+                    [
+                        {"$append":{"$what":" "}},
+                        {"$append":{"$what":{"$value":"model"}}}
+                    ]
+                },
+                "properties":
+                [
+                    {"$value":"color"},
+                    {"$value":"liter"},
+                    {"$value":"wheels"}
+                ],
+                "total":{"$value":"prices|0|priceWithTax"},
+                "tax":{"$value":"prices|1|tax"}
+            }
+        ]
+    }
+ }

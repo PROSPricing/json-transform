@@ -1,0 +1,69 @@
+{
+    "$comment":
+    [
+        "The examples below show how to use $path and $value to reference ",
+        "nodes in the source JSON data. $path remembers the context of the source ",
+        "data traversal so that subsequent $path and $value are relative to ",
+        "this context. $value does not remember the context, but is used to ",
+        "access and transform a value that is mapped to the target JSON."
+    ],
+
+    "mister":{"$value":"lastName"},
+
+    "$comment":
+    [
+        "Create new array misterChildren, set $path to source children, ",
+        "use $structure as model for the new array elements. ",
+        "The source array children is used to loop over children, ",
+        "while the source array childrenDetail provides the data."
+    ],
+
+    "misterChildren":
+    {
+        "$path":"children",
+        "$structure":
+        [
+            {
+                "$comment":
+                [
+                    "Relative to children node, $path is repositioned on each element ",
+                    "of the childrenDetails array. Subsequent $value paths ",
+                    "are relative to the new node in the source data."
+                ],
+
+                "$path":"..|..|childrenDetails|$i",
+                "name":{"$value":"name"},
+                "properties":
+                [
+                    {"$value":"age"},
+                    {"$value":"eyes"},
+                    {"$value":"hair"}
+                ]
+            }
+        ]
+    },
+
+    "$comment":"Retrieve array elements by index as well as by field value.",
+
+    "Helen":
+    {
+        "age":{"$value":"childrenDetails|1|age"},
+        "eyes":{"$value":"childrenDetails|name=Helen|eyes"}
+    },
+
+    "Christian":
+    {
+        "$path":"childrenDetails|name=Christian",
+        "age":{"$value":"age"},
+        "eyes":{"$value":"eyes"}
+    },
+
+    "$comment":"Retrieve parent objects using relative $path.",
+
+    "fiat":
+    {
+        "$path":"cars|car1",
+        "owner":{"$value":"..|..|firstName"},
+        "youngDrivers":{"$value":"..|..|children"}
+    }
+}

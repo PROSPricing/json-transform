@@ -1,0 +1,23 @@
+{
+  "foo" : 100,
+  "joe" : 200,
+  "dan" : {
+    "foo" : 200
+  },
+  "types" : {
+    "numberType" : 10.7,
+    "stringType" : "hello",
+    "booleanType" : false,
+    "objectType" : {
+      "foo" : "bar"
+    },
+    "arrayType" : [ 1, 2, 3 ]
+  },
+  "fooNumber" : 100,
+  "fooValues" : 100,
+  "boolFalse" : false,
+  "stringHello" : "hello",
+  "fooRange" : 100,
+  "stringRange" : "hello",
+  "sumCheck" : 300.0
+}

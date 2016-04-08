@@ -1,0 +1,13 @@
+{
+  "folksCars" : [ {
+    "name" : "joe",
+    "car" : "ford"
+  }, {
+    "name" : "dan",
+    "car" : "bmw"
+  } ],
+  "stringArray" : [ "joe", "dan" ],
+  "agesArray" : [ 25, 35 ],
+  "carBrands" : [ "ford", "bmw" ],
+  "sumAges" : 60.0
+}

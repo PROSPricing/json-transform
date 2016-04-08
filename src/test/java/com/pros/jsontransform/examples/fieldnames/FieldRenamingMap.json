@@ -1,0 +1,23 @@
+{
+"$comment": "Rename fields from the source.",
+
+    "name":     {"$value":"firstName"},
+    "surname":  {"$value":"lastName"},
+    "yearsOld": {"$value":"age"},
+
+"$comment": "Create a new fullName field as a concatenation of source fields.",
+
+    "fullName":
+    {
+        "$expression":
+        [
+            {"$append":{"$what":{"$value":"firstName"}}},
+            {"$append":{"$what":" "}},
+            {"$append":{"$what":{"$value":"lastName"}}}
+        ]
+    },
+
+"$comment": "Copy entire structure from source.",
+
+    "more":     {"$value":"more"}
+}

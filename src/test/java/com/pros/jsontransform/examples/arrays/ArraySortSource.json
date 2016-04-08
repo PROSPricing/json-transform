@@ -1,0 +1,17 @@
+{
+    "colors": ["red", "orange", "yellow", "green"],
+    "numbers": [1, 4, -3, 0.45, 4.34, 1.1, 0.5],
+    "shapes":
+    [
+        {"name":"circle", "index":3},
+        {"name":"square", "index":1},
+        {"name":"triangle", "index":2}
+    ],
+    "folks":
+    [
+        {"name":"Peter", "surname":"Cray"},
+        {"name":"Hanna", "surname":"Montana"},
+        {"name":"Peter", "surname":"Allison"},
+        {"name":"Hanna", "surname":"Cray"}
+    ]
+}

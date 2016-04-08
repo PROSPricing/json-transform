@@ -1,0 +1,11 @@
+{
+  "colors" : [ "red", "orange", "yellow", "green" ],
+  "fewColors" : [ "red", "green", "magenta" ],
+  "newColors" : [ "purple", "blue", 10, {
+    "color1" : "white"
+  }, {
+    "color2" : "green"
+  } ],
+  "mapColors" : [ "red", "green" ],
+  "reddishColors" : [ "red", "orange" ]
+}

@@ -1,0 +1,27 @@
+{
+  "personChildren" : {
+    "child1" : {
+      "firstName" : "Luis",
+      "lastName" : "Wilson"
+    },
+    "child2" : {
+      "firstName" : "Helen",
+      "lastName" : "Wilson"
+    }
+  },
+  "childDetails" : {
+    "child1" : {
+      "name" : "Luis",
+      "parentName" : "Paul",
+      "siblingName" : "Helen"
+    }
+  },
+  "moreNesting" : {
+    "child3" : {
+      "name" : "Chris",
+      "parentName" : "Paul",
+      "sibling1" : "Luis",
+      "sibling2" : "Helen"
+    }
+  }
+}

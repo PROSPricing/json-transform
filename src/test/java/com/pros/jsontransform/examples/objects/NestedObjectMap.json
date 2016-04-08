@@ -1,0 +1,45 @@
+{
+    "$comment":"Children summary using references relative to root.",
+
+    "personChildren":
+    {
+        "child1":
+        {
+            "firstName":    {"$value":"person|children|first"},
+            "lastName":     {"$value":"person|surname"}
+        },
+        "child2":
+        {
+            "firstName":    {"$value":"person|children|second"},
+            "lastName":     {"$value":"person|surname"}
+        }
+    },
+
+    "$comment":"Details for one of the children.",
+    "$comment":"The $path sets the context for nested $values.",
+
+    "childDetails":
+    {
+        "$path":"person|children",
+        "child1":
+        {
+            "name":         {"$value":"first"},
+            "parentName":   {"$value":"..|name"},
+            "siblingName":  {"$value":"second"}
+        }
+    },
+
+    "$comment":"Example with more nested structure.",
+
+    "moreNesting":
+    {
+        "$path":"person|children|third",
+        "child3":
+        {
+            "name":         {"$value":"name"},
+            "parentName":   {"$value":"..|..|name"},
+            "sibling1":     {"$value":"..|first"},
+            "sibling2":     {"$value":"..|second"}
+        }
+    }
+}

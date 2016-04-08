@@ -1,0 +1,71 @@
+{
+    "$comment":"Copy array to target as is.",
+
+    "colors": {"$value":"colors"},
+
+    "$comment":"Take only few specific elements of source array.",
+
+    "fewColors":
+    [
+        {"$value":"colors|0"},
+        {"$value":"colors|3"}
+    ],
+
+    "$comment":"Mixed elements.",
+
+    "newColors":
+    [
+        "purple",
+        "blue",
+        10,
+        {"color1":"white"},
+        {"color2":{"$value":"colors|3"}}
+    ],
+
+    "$comment":"Append more colors to fewColors array.",
+
+    "appendColors":
+    {
+        "$append":"fewColors",
+        "$structure":
+        [
+            "magenta"
+        ]
+    },
+
+    "$comment":
+    [
+        "Create target array from source array, apply include filter. ",
+        "By setting $path to a source array the transformation loops ",
+        "through each source element and creates a target element. ",
+        "Array mapping requires $structure with one element as the model ",
+        "of the target element."
+    ],
+
+    "mapColors":
+    {
+        "$path":"colors",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$include":
+        [
+            {"$contains":{"$value":".", "$what":"re"}}
+        ]
+    },
+
+    "reddishColors":
+    {
+        "$path":"colors",
+        "$structure":
+        [
+            {"$value":"."}
+        ],
+        "$include":
+        [
+            {"$equals":{"$value":".", "$what":"red"}},
+            {"$equals":{"$value":".", "$what":"orange"}}
+        ]
+    }
+}

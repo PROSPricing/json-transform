@@ -1,0 +1,5 @@
+{
+    "folks": ["joe", "dan"],
+    "cars": ["ford", "bmw"],
+    "ages": [25, 35]
+}

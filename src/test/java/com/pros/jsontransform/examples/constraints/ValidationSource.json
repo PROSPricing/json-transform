@@ -1,0 +1,15 @@
+{
+    "bar":100,
+    "foo":
+    {
+        "tar":200
+    },
+    "checkType":
+    {
+        "numberType":   10.7,
+        "booleanType":  false,
+        "stringType":   "hello",
+        "objectType":   {"foo":"bar"},
+        "arrayType":    [1,2,3]
+    }
+}

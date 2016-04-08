@@ -1,0 +1,70 @@
+{
+    "$comment":
+    [
+        "Each person in 'folks' array must have a car in 'cars' array.",
+        "Within a folks array element, the first .. in the car value identifies ",
+        "the folks array node and the second .. identifies the root object ",
+        "where the cars array can be found. The cars|$i is the cars element ",
+        "that corresponds to the folks element being processed."
+    ],
+
+    "folksCars":
+    {
+        "$path":"folks",
+        "$structure":
+        [{
+            "name": {"$value":"."},
+            "car": {"$value":"..|..|cars|$i", "$constraints":[{"$required":true}]}
+        }]
+    },
+
+    "$comment": "Only string type is allowed in 'folks' array.",
+
+    "stringArray":
+    {
+        "$path":"folks",
+        "$structure":
+        [{
+            "$value":".", "$constraints":[{"$type":"string"}]
+        }]
+    },
+
+    "$comment": "Folks cannot be in retirement age, i.e. 'ages' array values are less than 65.",
+
+    "agesArray":
+    {
+        "$path":"ages",
+        "$structure":
+        [{
+            "$value":".", "$constraints":[{"$range":{"less-than":65}}]
+        }]
+    },
+
+    "$comment": "Brands in cars array can be 'ford' or 'bmw'.",
+
+    "carBrands":
+    {
+        "$path":"cars",
+        "$structure":
+        [{
+            "$value":".", "$constraints":[{"$values":["ford", "bmw"]}]
+        }]
+    },
+
+    "$comment":
+    [
+        "Sum of all folks ages must be less than 130.",
+        "First the $expression calculates the sumAges value, then ",
+        "the $constraint checks the value range."
+    ],
+
+    "sumAges":
+    {
+        "$expression":[{"$sum":{"$what":[{"$value":"ages|0"}, {"$value":"ages|1"}]}}],
+        "$constraints":[{"$range":{"less-than":130}}]
+    }
+
+}
+
+
+

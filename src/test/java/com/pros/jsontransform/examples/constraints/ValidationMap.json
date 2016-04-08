@@ -1,0 +1,68 @@
+{
+    "$comment": "Node bar is required in the source JSON.",
+
+    "foo": {"$value":"bar", "$constraints":[{"$required":true}]},
+
+    "$comment": "Node foo|tar is required in the source JSON.",
+
+    "joe": {"$value":"foo|tar", "$constraints":[{"$required":true}]},
+
+    "$comment": "Node foo|tar is required in the source JSON.",
+
+    "dan":
+    {
+        "$path":"foo",
+        "foo": {"$value":"tar", "$constraints":[{"$required":true}]}
+    },
+
+    "$comment": "Node numberType must be a JSON number... etc.",
+
+    "types":
+    {
+        "$path":"checkType",
+        "numberType":{"$value":"numberType", "$constraints":[{"$type":"number"}]},
+        "stringType":{"$value":"stringType", "$constraints":[{"$type":"string"}]},
+        "booleanType":{"$value":"booleanType", "$constraints":[{"$type":"boolean"}]},
+        "objectType":{"$value":"objectType", "$constraints":[{"$type":"object"}]},
+        "arrayType":{"$value":"arrayType", "$constraints":[{"$type":"array"}]}
+    },
+
+    "$comment": "Node bar is required in the source JSON and is a number.",
+
+    "fooNumber": {"$value":"bar", "$constraints":[{"$required":true}, {"$type":"number"}]},
+
+    "$comment": "Node bar in the source JSON has one of three possible values.",
+
+    "fooValues": {"$value":"bar", "$constraints":[{"$values":[100, 200, 300]}]},
+
+    "$comment": "Node booleanType must be false.",
+
+    "boolFalse": {"$value":"checkType|booleanType", "$constraints":[{"$values":[false]}]},
+
+    "$comment": "Node stringType must be either 'hello' or 'goodbye'.",
+
+    "stringHello": {"$value":"checkType|stringType", "$constraints":[{"$values":["hello", "goodbye"]}]},
+
+    "$comment": "Node bar must be greater than 10 and less than 100.2.",
+
+    "fooRange": {"$value":"bar", "$constraints":[{"$range":{"greater-than":10, "less-than":100.2}}]},
+
+    "$comment": "Node stringType must be lexicographically greater than 'abc' and less than 'xyz'.",
+
+    "stringRange": {"$value":"checkType|stringType", "$constraints":[{"$range":{"greater-than":"abc", "less-than":"xyz"}}]},
+
+    "$comment":
+    [
+        "The sum of bar and foo|tar calculated in sumCheck must be less than 400.",
+        "The constraints are applied after the expression is evaluated."
+    ],
+
+    "sumCheck":
+    {
+        "$expression":[{"$sum":{"$what":[{"$value":"bar"}, {"$value":"foo|tar"}]}}],
+        "$constraints":[{"$range":{"less-than":400}}]
+    }
+}
+
+
+

@@ -1,0 +1,13 @@
+{
+  "cars" : [ {
+    "name" : "fiat punto",
+    "properties" : [ "red", 1.8, "alluminum" ],
+    "total" : 9500,
+    "tax" : 950
+  }, {
+    "name" : "alfaromeo prima",
+    "properties" : [ "blue", 2.2, "titanium" ],
+    "total" : 19500,
+    "tax" : 2234
+  } ]
+}

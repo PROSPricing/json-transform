@@ -1,0 +1,25 @@
+{
+  "mister" : "Pan",
+  "misterChildren" : [ {
+    "name" : "Chris",
+    "properties" : [ 10, "blue", "blonde" ]
+  }, {
+    "name" : "Helen",
+    "properties" : [ 11, "brown", "red" ]
+  }, {
+    "name" : "Christian",
+    "properties" : [ 12, "green", "black" ]
+  } ],
+  "Helen" : {
+    "age" : 11,
+    "eyes" : "brown"
+  },
+  "Christian" : {
+    "age" : 12,
+    "eyes" : "green"
+  },
+  "fiat" : {
+    "owner" : "Peter",
+    "youngDrivers" : [ "Chris", "Helen", "Christian" ]
+  }
+}

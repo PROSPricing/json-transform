@@ -1,0 +1,35 @@
+{
+    "firstName":"Peter",
+    "lastName":"Pan",
+    "age":30,
+    "children":["Chris", "Helen", "Christian"],
+    "childrenDetails":
+    [
+        {"name":"Chris", "age":10, "eyes":"blue", "hair":"blonde", "height":120, "weight":50},
+        {"name":"Helen", "age":11, "eyes":"brown", "hair":"red", "height":110, "weight":60},
+        {"name":"Christian", "age":12, "eyes":"green", "hair":"black", "height":130, "weight":55}
+    ],
+    "cars":
+    {
+        "car1":
+        {
+            "brand":"fiat",
+            "insurance":
+            {
+                "name":"lifeguard",
+                "class":10,
+                "propertyDamage":5000
+            }
+        },
+        "car2":
+        {
+            "brand":"vw",
+            "insurance":
+            {
+                "name":"lifeguard",
+                "class":7,
+                "propertyDamage":7000
+            }
+        }
+    }
+}
