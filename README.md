@@ -224,3 +224,12 @@ The gradle build follows the standard gradle java plugin setup:
 ## Plugin Development
 
 json-transform can be extended by writing Java plugins for the various transform directives. Refer to the [json-transform-plugin] (https://github.com/PROSPricing/json-transform-plugin) project for more information.
+
+## Todo
+
+- apply constraint before or after source transformation
+- functions should start from value node when it is not a container, e.g. FunctionSum
+- $path object can have $structure
+- $structure objects can have $append
+- meta objects with $ transforms cannot be mingled with normal objects
+- combination $path $expression does not work
