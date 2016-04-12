@@ -156,22 +156,22 @@ The *$constraints* directive sets multiple validation rules on a JSON node. Rang
 All examples are located in the unit tests folders and include a source JSON, a transform JSON, a target JSON (result of the transformation) and a Java unit test to run the example.
 
 - [Arrays]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/arrays)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/arrays)
   => merge, filter, sort...
 - [Constraints]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/constraints)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/constraints)
   => validate required, data type, values, range...
 - [Expressions]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/expressions)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/expressions)
   => set, replace, append, array index, UUID...
 - [Fields]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/fieldnames)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/fieldnames)
   => rename, restructure, copy...
 - [Objects]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/objects)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/objects)
   => reference, nested objects...
 - [Paths]
-  (https://stash.pros.com/users/lsuardi/repos/json-transform/browse/src/test/java/com/transform/examples/paths)
+  (https://github.com/PROSPricing/json-transform/tree/master/src/test/java/com/pros/jsontransform/examples/paths)
   => path vs. value, array index, array search, parent access...
 
 ## How To Use
@@ -223,4 +223,4 @@ The gradle build follows the standard gradle java plugin setup:
 
 ## Plugin Development
 
-json-transform can be extended by writing Java plugins for the various transform directives. Refer to the [json-transform-plugin] (https://stash.pros.com/users/lsuardi/repos/json-transform-plugin/browse) project for more information.
+json-transform can be extended by writing Java plugins for the various transform directives. Refer to the [json-transform-plugin] (https://github.com/PROSPricing/json-transform-plugin) project for more information.
